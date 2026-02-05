@@ -7,6 +7,7 @@ public class Main {
         System.out.println(CS106.getCourseInformation());
         CS106.setStatus(Course.Status.WAITLISTED);
         System.out.println(CS106.getCourseInformation());
+
     }
 
 }
