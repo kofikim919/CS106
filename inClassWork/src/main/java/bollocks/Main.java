@@ -3,11 +3,12 @@ package bollocks;
 public class Main {
     public static void main(String[] args) {
 
-        Course CS106 = new Course(Course.Department.CMSC, "Data Structures", 106, "Hilles 204", "Sorelle", Course.Status.ENROLLED);
-        System.out.println(CS106.getCourseInformation());
-        CS106.setStatus(Course.Status.WAITLISTED);
-        System.out.println(CS106.getCourseInformation());
-
+        LinkedLists.LinkedList list = new LinkedLists().new LinkedList();
+        list.addNode(list, 4);
+        list.addNode(list, "hello");
+        list.addNode(list, 3.278);
+        System.out.println(list.printList());
+        System.out.println(list.getNodeInfo(1));
     }
 
 }
