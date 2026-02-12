@@ -13,6 +13,7 @@ public class Main {
         System.out.println(list.getNodeInfo(1));
         list.newNodeIndexed(list, "of", 4);
         list.removeNode(2);
+        list.removeNode(0);
         System.out.println(list.printList());
     }
 

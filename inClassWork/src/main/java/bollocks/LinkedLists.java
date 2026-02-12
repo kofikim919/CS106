@@ -96,6 +96,38 @@ public class LinkedLists {
             size--;
         }
 
+        public boolean listEquality(LinkedList otherList) {
+
+            if (this.size != otherList.size) {
+                return false;
+            }
+
+            Node current1 = this.head;
+            Node current2 = otherList.head;
+
+            while (current1 != null && current2 != null) {
+                if (!current1.element.equals(current2.element)) {
+                    return false;
+                }
+                current1 = current1.nextNode;
+                current2 = current2.nextNode;
+            }
+
+            return true;
+        }
+
+        public LinkedList copyList() {
+
+            LinkedList newList = new LinkedList();
+            Node current = this.head;
+            while (current != null) {
+                newList.addNode(newList, current.element);
+                current = current.nextNode;
+            }
+            return newList;
+
+        }
+
         public String printList() {
 
             StringBuilder sb = new StringBuilder();
