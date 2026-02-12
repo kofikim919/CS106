@@ -11,10 +11,12 @@ public class LinkedLists {
         private class Node {
             private Object element;
             private Node nextNode;
+            private Node prevNode;
 
             public Node(Object element){
                 this.element = element;
                 this.nextNode = null;   
+                this.prevNode = null;
             }
         }
 
@@ -33,10 +35,28 @@ public class LinkedLists {
             } else {
                 Node current = list.tail;
                 current.nextNode = newnode;
+                newnode.prevNode = current;
                 list.tail = newnode;
                 size++;
             }
         }
+
+        public void nodeAfter (LinkedList list, Object element, Node afterNode) {
+
+            Node newNode = list.new Node(element);
+            if (afterNode.nextNode == null) {
+                afterNode.nextNode = newNode;
+                newNode.prevNode = afterNode;
+                list.tail = newNode;
+            } else {
+                newNode.nextNode = afterNode.nextNode;
+                newNode.prevNode = afterNode;
+                afterNode.nextNode.prevNode = newNode;
+                afterNode.nextNode = newNode;
+            }
+            list.size++;
+        }
+
         // lets us add an element at a desired index
         public void newNodeIndexed (LinkedList list, Object element, int position) {
 
