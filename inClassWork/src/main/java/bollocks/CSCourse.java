@@ -1,6 +1,6 @@
 package bollocks;
 
-public class CSCourse extends Course {
+public class CSCourse extends Course implements Comparable<CSCourse> {
 
     private String language;
 
@@ -12,4 +12,10 @@ public class CSCourse extends Course {
     public String getLanguage() {
         return language;
     }
+
+        @Override
+        public int compareTo(CSCourse other) {
+            // Compare based on course number
+            return Integer.compare(this.getCourseNum(), other.getCourseNum());
+        }
 }

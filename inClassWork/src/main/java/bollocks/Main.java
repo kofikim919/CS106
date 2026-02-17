@@ -15,6 +15,7 @@ public class Main {
         list.removeNode(2);
         list.removeNode(0);
         System.out.println(list.printList());
+        System.out.println(args[1]);
     }
 
 }
